@@ -1,0 +1,166 @@
+
+assets.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+background
+  rotate: false
+  xy: 1, 605
+  size: 720, 1280
+  orig: 720, 1280
+  offset: 0, 0
+  index: -1
+asteroid
+  rotate: false
+  xy: 1, 303
+  size: 300, 300
+  orig: 300, 300
+  offset: 0, 0
+  index: 1
+asteroid
+  rotate: false
+  xy: 723, 1585
+  size: 300, 300
+  orig: 300, 300
+  offset: 0, 0
+  index: 2
+asteroid
+  rotate: false
+  xy: 1, 1
+  size: 300, 300
+  orig: 300, 300
+  offset: 0, 0
+  index: 3
+asteroid
+  rotate: false
+  xy: 303, 303
+  size: 300, 300
+  orig: 300, 300
+  offset: 0, 0
+  index: 4
+asteroid
+  rotate: false
+  xy: 723, 1283
+  size: 300, 300
+  orig: 300, 300
+  offset: 0, 0
+  index: 5
+explosion01
+  rotate: false
+  xy: 1025, 1585
+  size: 300, 300
+  orig: 300, 300
+  offset: 0, 0
+  index: -1
+explosion02
+  rotate: false
+  xy: 303, 1
+  size: 300, 300
+  orig: 300, 300
+  offset: 0, 0
+  index: -1
+explosion03
+  rotate: false
+  xy: 723, 981
+  size: 300, 300
+  orig: 300, 300
+  offset: 0, 0
+  index: -1
+ship1
+  rotate: false
+  xy: 1025, 1283
+  size: 300, 300
+  orig: 300, 300
+  offset: 0, 0
+  index: 1
+ship1
+  rotate: false
+  xy: 1327, 1585
+  size: 300, 300
+  orig: 300, 300
+  offset: 0, 0
+  index: 2
+ship1
+  rotate: false
+  xy: 723, 679
+  size: 300, 300
+  orig: 300, 300
+  offset: 0, 0
+  index: 3
+ship2
+  rotate: false
+  xy: 1025, 981
+  size: 300, 300
+  orig: 300, 300
+  offset: 0, 0
+  index: 1
+ship2
+  rotate: false
+  xy: 1327, 1283
+  size: 300, 300
+  orig: 300, 300
+  offset: 0, 0
+  index: 2
+ship2
+  rotate: false
+  xy: 1629, 1585
+  size: 300, 300
+  orig: 300, 300
+  offset: 0, 0
+  index: 3
+ship3
+  rotate: false
+  xy: 1025, 679
+  size: 300, 300
+  orig: 300, 300
+  offset: 0, 0
+  index: 1
+ship3
+  rotate: false
+  xy: 1327, 981
+  size: 300, 300
+  orig: 300, 300
+  offset: 0, 0
+  index: 2
+ship3
+  rotate: false
+  xy: 1629, 1283
+  size: 300, 300
+  orig: 300, 300
+  offset: 0, 0
+  index: 3
+star
+  rotate: false
+  xy: 1327, 789
+  size: 190, 190
+  orig: 190, 190
+  offset: 0, 0
+  index: -1
+ufo
+  rotate: false
+  xy: 1629, 1091
+  size: 190, 190
+  orig: 190, 190
+  offset: 0, 0
+  index: 1
+ufo
+  rotate: false
+  xy: 605, 413
+  size: 190, 190
+  orig: 190, 190
+  offset: 0, 0
+  index: 2
+ufo
+  rotate: false
+  xy: 605, 221
+  size: 190, 190
+  orig: 190, 190
+  offset: 0, 0
+  index: 3
+ufo
+  rotate: false
+  xy: 605, 29
+  size: 190, 190
+  orig: 190, 190
+  offset: 0, 0
+  index: 4
