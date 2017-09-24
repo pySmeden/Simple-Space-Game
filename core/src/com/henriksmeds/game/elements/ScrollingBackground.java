@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import static com.badlogic.gdx.scenes.scene2d.actions.Actions.*;
 import com.henriksmeds.game.Application;
@@ -31,9 +32,9 @@ public class ScrollingBackground extends Actor {
         textureRegion = new TextureRegion(texture, texture.getWidth(), texture.getHeight() * 2);
         setWidth(app.WORLD_WIDTH);
         setHeight(app.WORLD_HEIGHT);
-        setPosition(0, app.WORLD_HEIGHT);
+        setPosition(0f, app.WORLD_HEIGHT);
 
-        addAction(forever(sequence(moveTo(0, 0, this.scrollspeed), moveTo(0, app.WORLD_HEIGHT))));
+        addAction(forever(sequence(moveTo(0f, 0f, this.scrollspeed), moveTo(0f, app.WORLD_HEIGHT))));
 
 
     }
@@ -41,7 +42,7 @@ public class ScrollingBackground extends Actor {
     @Override
     public void draw(Batch batch, float parentAlpha) {
         super.draw(batch, parentAlpha);
-        batch.draw(textureRegion, getX(), getY() - getHeight(), getWidth(), getHeight() * 2);
+        batch.draw(textureRegion, getX(), getY() - getHeight(), getWidth(), getHeight() * 2f);
     }
 
     @Override

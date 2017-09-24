@@ -1,10 +1,12 @@
 package com.henriksmeds.game.utils;
 
+import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.Contact;
 import com.badlogic.gdx.physics.box2d.ContactImpulse;
 import com.badlogic.gdx.physics.box2d.ContactListener;
 import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.Manifold;
+import com.badlogic.gdx.physics.box2d.World;
 import com.henriksmeds.game.elements.Asteroids;
 import com.henriksmeds.game.elements.PhysicsPlayer;
 import com.henriksmeds.game.elements.Star;
@@ -14,26 +16,27 @@ import com.henriksmeds.game.elements.Star;
  */
 
 public class MyContactListener implements ContactListener{
+    World world;
+    public MyContactListener(World world) {
+        this.world = world;
+    }
 
     @Override
     public void beginContact(Contact contact) {
-        Fixture fa = contact.getFixtureA();
-        Fixture fb = contact.getFixtureB();
-
-        if(fa == null || fb == null) return;
-
-        if (hasPlayerContactStar(fa, fb)) {
-            System.out.println("Touch");
-        }
-
-        hasPlayerContactAsteroid(fa, fb);
-
     }
 
     @Override
     public void endContact(Contact contact) {
+        Body bodyA = contact.getFixtureA().getBody();
+        Body bodyB = contact.getFixtureB().getBody();
 
+        if(bodyA  == null || bodyB == null) return;
+
+        if(hasPlayerContactStar(bodyA, bodyB)) {
+            if(bodyA.getUserData() instanceof Star) System.out.print("blah");
+        }
     }
+
 
     @Override
     public void preSolve(Contact contact, Manifold oldManifold) {
@@ -44,23 +47,14 @@ public class MyContactListener implements ContactListener{
     public void postSolve(Contact contact, ContactImpulse impulse) {
 
     }
-    private boolean hasPlayerContactStar(Fixture fa, Fixture fb) {
+    private boolean hasPlayerContactStar(Body bodyA, Body bodyB) {
         boolean isContact = false;
-        if(fa.getBody().getUserData() instanceof Star || fb.getBody().getUserData() instanceof Star){
-            if(fa.getBody().getUserData() instanceof PhysicsPlayer || fb.getBody().getUserData() instanceof PhysicsPlayer) {
+        if(bodyA.getUserData() instanceof Star ||bodyA.getUserData() instanceof Star){
+            if(bodyB.getUserData() instanceof PhysicsPlayer || bodyB.getUserData() instanceof PhysicsPlayer) {
                 isContact = true;
             }
         }
         return isContact;
     }
 
-    private boolean hasPlayerContactAsteroid(Fixture fa, Fixture fb) {
-        boolean isContact = false;
-        if(fa.getBody().getUserData() instanceof Asteroids || fb.getBody().getUserData() instanceof Asteroids){
-            if(fa.getBody().getUserData() instanceof PhysicsPlayer || fb.getBody().getUserData() instanceof PhysicsPlayer) {
-                isContact = true;
-            }
-        }
-        return isContact;
-    }
 }

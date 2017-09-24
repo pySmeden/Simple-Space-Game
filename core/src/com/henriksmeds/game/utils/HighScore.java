@@ -19,7 +19,7 @@ public class HighScore {
     public static void load() {
 
         try {
-            fileHandle = Gdx.files.external("scores.txt");
+            fileHandle = Gdx.files.internal("scores.txt");
             if(!fileHandle.readString().isEmpty()) {
                 String[] string = fileHandle.readString().split("\n");
                 for(int i = 0; i < 5; i++) {
@@ -37,8 +37,7 @@ public class HighScore {
 
     public static void save() {
         try {
-            fileHandle = Gdx.files.external("scores.txt");
-
+            fileHandle = Gdx.files.internal("scores.txt");
             for(int i = 0; i < 5; i++) {
                 fileHandle.writeString(Integer.toString(scores[i]) + "\n", true);
             }
@@ -48,7 +47,7 @@ public class HighScore {
         }
     }
 
-    public static void addScore(int Score) {
+    public static void addScore1(int Score) {
         for(int i = 4; i >= 0; i--) {
             if(Score > scores[i]) {
                 for(int j = i; j > 0; j--) {
@@ -60,7 +59,7 @@ public class HighScore {
         }
     }
 
-    public static void addScore1 (int score) {
+    public static void addScore (int score) {
         for (int i = 0; i < 5; i++) {
             if (scores[i] < score) {
                 for (int j = 4; j > i; j--)

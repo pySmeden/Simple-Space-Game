@@ -2,7 +2,7 @@
 <!-- created with https://www.codeandweb.com/physicseditor -->
 <bodydef>
 
-	<body name="asteroid_1">
+	<body name="asteroid">
 		<is_dynamic/>
 		<linear_damping>0</linear_damping>
 		<angular_damping>0</angular_damping>

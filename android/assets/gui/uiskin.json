@@ -28,6 +28,7 @@
 
 com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle: {
 	return_white: { down: return_white1X, up: return_white1X }
+	return_grey: { down: return_black, up: return_grey }
 	pause: {down: pause_white1x, up: pause_white1x}
 },
 

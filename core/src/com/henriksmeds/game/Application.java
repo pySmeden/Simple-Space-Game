@@ -1,17 +1,14 @@
 package com.henriksmeds.game;
 
 import com.badlogic.gdx.Game;
-import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.utils.viewport.FillViewport;
-import com.henriksmeds.game.screens.GameScreen;
-import com.henriksmeds.game.screens.HighscoreScreen;
-import com.henriksmeds.game.screens.MenuScreen;
-import com.henriksmeds.game.screens.PauseScreen;
-import com.henriksmeds.game.utils.HighScore;
+import com.henriksmeds.game.screens.GameScreenCopy;
+import com.henriksmeds.game.screens.MenuScreenCopy;
+import com.henriksmeds.game.screens.SplashScreen;
+import com.henriksmeds.game.utils.Assets;
 
 public class Application extends Game {
+
 
 	public final float WORLD_HEIGHT = 8f;
 	public final float WORLD_WIDTH = 4.8f;
@@ -22,23 +19,23 @@ public class Application extends Game {
 	public final float SCALE = 0.01f;
 
 	public SpriteBatch batch;
+	public Assets assets;
 
-	public GameScreen gameScreen;
-	public MenuScreen menuScreen;
-	public HighscoreScreen highscoreScreen;
-	public PauseScreen pauseScreen;
+	public GameScreenCopy gameScreenCopy;
+	public MenuScreenCopy menuScreenCopy;
+	public SplashScreen splashScreen;
 
 	
 	@Override
 	public void create () {
+		assets = new Assets();
 		batch = new SpriteBatch();
 
-		gameScreen = new GameScreen(this);
-		menuScreen = new MenuScreen(this);
-		highscoreScreen = new HighscoreScreen(this);
-		pauseScreen = new PauseScreen(this);
+		gameScreenCopy = new GameScreenCopy(this);
+		menuScreenCopy = new MenuScreenCopy(this);
+		splashScreen = new SplashScreen(this);
 
-		this.setScreen(gameScreen);
+		this.setScreen(splashScreen);
 	}
 
 

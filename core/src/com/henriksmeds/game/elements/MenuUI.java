@@ -81,11 +81,6 @@ public class MenuUI extends Actor{
         titleLabel.setColor(Color.DARK_GRAY);
         titleLabel.setPosition(positionX - titleLabel.getMinWidth()/2f, image.getY() + titleLabel.getMinHeight());
 
-        /*
-        this.stage.addActor(image);
-        this.stage.addActor(titleLabel);
-        this.stage.addActor(table);
-        */
 
     }
 
@@ -126,7 +121,6 @@ public class MenuUI extends Actor{
         returnBtn.setSize(50, 50);
         returnBtn.setName(id);
         this.stack.push(returnBtn);
-        //stage.addActor(returnBtn);
     }
 
     public void addButton(int x, int y, String style) {
